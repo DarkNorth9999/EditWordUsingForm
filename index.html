@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Word Form Processor</title>
+  <script>
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   document.getElementById("RPT").addEventListener("click", addRow, false)
+    var rowCount = 1;
+
+    function addRow() {
+      console.log("sss")
+      rowCount++;
+      // Find a <table> element with id="myTable":
+      var table = document.getElementById("rptTable")
+      var row = table.insertRow(rowCount);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      let idResource = "resource" + rowCount;
+      let idResourceName = "resourceName" + rowCount;
+      cell1.innerHTML = "" + rowCount;
+      let cell1HTML = rowCount
+      let cell2HTML = "<input name=" + idResource + ">";
+      let cell3HTML = "<input name=" + idResourceName + ">";
+      cell2.innerHTML = cell2HTML;
+      cell3.innerHTML = cell3HTML;
+      console.log(cell1, cell2, cell3);
+    }
+
+    // });
+  </script>
+</head>
+
+<body>
+  <h1>Please Fill the Fields Below</h1>
+
+  <form action="/process" method="POST">
+
+    <label>Product Name: </label><br />
+    <input type="text" name="Product Name" placeholder="Product Name" /><br /><br />
+
+    <label>Sequence Number: </label><br />
+    <input type="text" name="Sequence Number" placeholder="Sequence Number" /><br /><br />
+
+    <label>Customer Name: </label><br />
+    <input type="text" name="Customer Name" placeholder="Customer Name" /><br /><br />
+
+    <label>Company Name: </label><br />
+    <input type="text" name="Company Name" placeholder="Company Name" /><br /><br />
+
+    <label>Start Date (YYYY-MM-DD): </label><br />
+    <input type="date" name="Start Date" placeholder="YYYY-MM-DD" /><br /><br />
+
+    <label>End Date (YYYY-MM-DD): </label><br />
+    <input type="date" name="End Date" placeholder="YYYY-MM-DD" /><br /><br />
+
+    <label>Country: </label><br />
+    <input type="text" name="Country" placeholder="Country" /><br /><br />
+
+    <label>Customer Location: </label><br />
+    <input type="text" name="Customer Location" placeholder="Customer Location" /><br /><br />
+
+    <label>Supplier Contact Name: </label><br />
+    <input type="text" name="Supplier Contact Name" placeholder="Supplier Contact Name" /><br /><br />
+
+    <label>Supplier Title: </label><br />
+    <input type="text" name="Supplier Title" placeholder="Supplier Title" /><br /><br />
+
+    <label>Supplier Phone Number: </label><br />
+    <input type="text" name="Supplier Phone Number" placeholder="Supplier Phone Number" /><br /><br />
+
+    <label>Supplier Email Address: </label><br />
+    <input type="text" name="Supplier Email Address" placeholder="Supplier Email Address" /><br /><br />
+
+    <label>Supplier Name: </label><br />
+    <input type="text" name="Supplier Name" /><br /><br />
+
+    <table id="rptTable">
+      <thead>
+        <th>
+          S No.
+        </th>
+        <th>
+          Resource Designation
+        </th>
+        <th>
+          Resource Name
+        </th>
+      </thead>
+      <tr>
+        <td>1</td>
+        <td><input name="resource1" type="text" placeholder="Resource Designation"></td>
+        <td><input name="resourceName1" type="text" placeholder="Resource Name"></td>
+      </tr>
+    </table>
+
+    <button id="RPT" onclick="addRow()" type="button">Add Row</button>
+    <br /><br /><br />
+    <button type="submit">Submit</button>
+    <a href="./DocFile.docx" target="_blank">Download Now</a>
+  </form>
+
+</body>
+
+</html>
