@@ -1,0 +1,19 @@
+{
+  "name": "node-hello-world",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docx": "^8.5.0",
+    "docxtemplater": "^3.44.0",
+    "express": "^4.18.2",
+    "mammoth": "^1.6.0",
+    "path": "^0.12.7",
+    "pizzip": "^3.1.6"
+  }
+}
